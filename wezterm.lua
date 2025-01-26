@@ -2,6 +2,12 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+local windows = false
+
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	windows = true
+end
+
 config.enable_wayland = false
 
 config.color_scheme = "Catppuccin Mocha"
@@ -24,7 +30,9 @@ config.font_rules = {
 
 config.font_size = 11.5
 
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+config.warn_about_missing_glyphs = false
+
+if windows then
 	config.default_prog = { "pwsh" }
 end
 
@@ -36,7 +44,7 @@ config.default_cursor_style = "BlinkingBar"
 
 local background_path = "/home/miitto/.config/wezterm/background.png"
 
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+if windows then
 	background_path = "C:\\Users\\miitto\\.config\\wezterm\\background.png"
 end
 
