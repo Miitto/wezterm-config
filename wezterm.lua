@@ -2,6 +2,8 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+config.enable_wayland = false
+
 config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font({
 	family = "Monaspace Neon Var",
@@ -68,5 +70,8 @@ config.window_padding = {
 	top = 3,
 	bottom = 3,
 }
+
+config.xcursor_theme = "Bibata-Modern-Ice"
+config.xcursor_size = 24
 
 return config
