@@ -33,7 +33,7 @@ config.font_size = 11.5
 config.warn_about_missing_glyphs = false
 
 if windows then
-	config.default_prog = { "pwsh" }
+	config.default_prog = { "pwsh", "-noLogo" }
 end
 
 config.hide_tab_bar_if_only_one_tab = true
